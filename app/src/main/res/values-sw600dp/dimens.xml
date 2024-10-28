@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Tablet text sizes -->
+    <dimen name="time_text_size">120sp</dimen>
+    <dimen name="day_text_size">100sp</dimen>
+    <dimen name="date_text_size">80sp</dimen>
+    <dimen name="location_text_size">80sp</dimen>
+    <dimen name="message_text_size">80sp</dimen>
+</resources>
