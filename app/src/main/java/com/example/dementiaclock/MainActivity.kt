@@ -7,7 +7,7 @@ import android.os.Looper
 import android.util.TypedValue
 import android.view.View
 import android.view.WindowManager
-import android.widget.ImageButton  // Add this instead of Button
+import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import java.text.SimpleDateFormat
@@ -96,22 +96,18 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showSettingsButton() {
-        runOnUiThread {
-            settingsButton.visibility = View.VISIBLE
-            findViewById<View>(R.id.touchArea).visibility = View.GONE  // Hide touch area
+        settingsButton.visibility = View.VISIBLE
 
-            // Cancel any existing hide operation
-            hideButtonRunnable?.let { handler.removeCallbacks(it) }
+        // Cancel any existing hide operation
+        hideButtonRunnable?.let { handler.removeCallbacks(it) }
 
-            // Create new hide operation
-            hideButtonRunnable = Runnable {
-                settingsButton.visibility = View.INVISIBLE
-                findViewById<View>(R.id.touchArea).visibility = View.VISIBLE  // Show touch area again
-            }
-
-            // Schedule the button to hide after 5 seconds
-            handler.postDelayed(hideButtonRunnable!!, 5000) // 5 seconds
+        // Create new hide operation
+        hideButtonRunnable = Runnable {
+            settingsButton.visibility = View.INVISIBLE
         }
+
+        // Schedule the button to hide after 5 seconds
+        handler.postDelayed(hideButtonRunnable!!, 5000) // 5 seconds
     }
 
     private fun startTimeUpdates() {
@@ -127,9 +123,18 @@ class MainActivity : AppCompatActivity() {
         runOnUiThread {
             val calendar = Calendar.getInstance()
 
-            // Update time
+            // Determine time of day
+            val hour = calendar.get(Calendar.HOUR_OF_DAY)
+            val timeOfDay = when (hour) {
+                in 5..11 -> "Morning"
+                in 12..16 -> "Afternoon"
+                in 17..20 -> "Evening"
+                else -> "Night"
+            }
+
+            // Update time with period of day
             val timeFormat = SimpleDateFormat("h:mm a", Locale.getDefault())
-            timeText.text = timeFormat.format(calendar.time)
+            timeText.text = "${timeFormat.format(calendar.time)} - $timeOfDay"
 
             // Update day
             val dayFormat = SimpleDateFormat("EEEE", Locale.getDefault())

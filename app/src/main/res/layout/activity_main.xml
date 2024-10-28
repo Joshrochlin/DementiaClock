@@ -20,10 +20,10 @@
         android:id="@+id/dayText"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1.2"
+        android:layout_weight="1.5"
         android:gravity="center"
         android:textColor="@color/white"
-        android:textSize="80sp"
+        android:textSize="90sp"
         android:textStyle="bold" />
 
     <TextView
