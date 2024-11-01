@@ -1,56 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
     android:orientation="vertical"
-    android:padding="32dp">
+    android:padding="32dp"
+    android:weightSum="10">
 
+    <!-- Time section -->
     <TextView
         android:id="@+id/timeText"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1.5"
+        android:layout_weight="2.5"
         android:gravity="center"
         android:textColor="@color/white"
         android:textSize="100sp"
         android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/dayText"
+    <!-- Date section -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1.5"
-        android:gravity="center"
-        android:textColor="@color/white"
-        android:textSize="90sp"
-        android:textStyle="bold" />
+        android:orientation="horizontal"
+        android:gravity="center">
 
-    <TextView
-        android:id="@+id/dateText"
+        <TextView
+            android:id="@+id/dayText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="70sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" - "
+            android:textColor="@color/white"
+            android:textSize="70sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/dateText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="70sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- Weather section -->
+    <LinearLayout
+        android:id="@+id/weatherContainer"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_weight="3"
         android:gravity="center"
-        android:textColor="@color/white"
-        android:textSize="70sp"
-        android:textStyle="bold" />
+        android:orientation="vertical"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="#33FFFFFF">
 
-    <TextView
-        android:id="@+id/locationText"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:textColor="@color/white"
-        android:textSize="70sp"
-        android:textStyle="bold" />
+        <ImageView
+            android:id="@+id/weatherIcon"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginBottom="16dp"
+            android:visibility="visible"
+            android:contentDescription="Weather Icon" />
 
+        <TextView
+            android:id="@+id/weatherText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:visibility="visible"
+            android:padding="8dp"
+            android:background="#FF0000" />
+
+    </LinearLayout>
+
+    <!-- Message section -->
     <TextView
         android:id="@+id/messageText"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="2"
+        android:layout_weight="2.5"
         android:gravity="center"
         android:textColor="@color/white"
         android:maxLines="4"
@@ -61,15 +102,18 @@
         android:paddingEnd="32dp"
         android:textSize="90sp" />
 
+    <!-- Settings button container -->
     <FrameLayout
         android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
         android:layout_gravity="end">
 
         <ImageButton
             android:id="@+id/settingsButton"
             android:layout_width="80dp"
             android:layout_height="80dp"
+            android:layout_gravity="center"
             android:src="@android:drawable/ic_menu_manage"
             android:scaleType="fitCenter"
             android:padding="16dp"
@@ -78,11 +122,5 @@
             android:visibility="invisible"
             app:tint="@color/white" />
 
-        <View
-            android:id="@+id/touchArea"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:clickable="true"
-            android:focusable="true"/>
     </FrameLayout>
 </LinearLayout>

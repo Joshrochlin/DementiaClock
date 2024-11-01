@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "423038165715",
+    "project_id": "dementiaclock-5f752",
+    "storage_bucket": "dementiaclock-5f752.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:423038165715:android:f27ad03726ace78440aa26",
+        "android_client_info": {
+          "package_name": "com.example.dementiaclock"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC1dcnPfVDXOF7U-p9m8DnrjNpHNMLz8N4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

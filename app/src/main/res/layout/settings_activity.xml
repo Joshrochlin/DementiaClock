@@ -2,32 +2,100 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="32dp">
 
-    <EditText
-        android:id="@+id/locationInput"
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter Location"
+        android:text="Location"
+        android:textColor="@color/white"
         android:textSize="24sp"
-        android:padding="16dp"
-        android:layout_marginBottom="16dp"/>
+        android:layout_marginBottom="8dp" />
 
     <EditText
-        android:id="@+id/messageInput"
+        android:id="@+id/locationEdit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter Message"
+        android:textColor="@color/white"
+        android:textColorHint="#80FFFFFF"
+        android:hint="Enter city name"
+        android:layout_marginBottom="32dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Morning Message"
+        android:textColor="@color/white"
         android:textSize="24sp"
-        android:padding="16dp"
-        android:layout_marginBottom="16dp"/>
+        android:layout_marginBottom="8dp" />
+
+    <EditText
+        android:id="@+id/morningMessageEdit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textColorHint="#80FFFFFF"
+        android:hint="Enter morning message"
+        android:layout_marginBottom="32dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Afternoon Message"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:layout_marginBottom="8dp" />
+
+    <EditText
+        android:id="@+id/afternoonMessageEdit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textColorHint="#80FFFFFF"
+        android:hint="Enter afternoon message"
+        android:layout_marginBottom="32dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Evening Message"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:layout_marginBottom="8dp" />
+
+    <EditText
+        android:id="@+id/eveningMessageEdit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textColorHint="#80FFFFFF"
+        android:hint="Enter evening message"
+        android:layout_marginBottom="32dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Night Message"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:layout_marginBottom="8dp" />
+
+    <EditText
+        android:id="@+id/nightMessageEdit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textColorHint="#80FFFFFF"
+        android:hint="Enter night message"
+        android:layout_marginBottom="32dp" />
 
     <Button
         android:id="@+id/saveButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Save"
-        android:textSize="24sp"
-        android:padding="16dp"/>
+        android:textSize="18sp" />
+
 </LinearLayout>
